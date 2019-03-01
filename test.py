@@ -1,7 +1,7 @@
 import os
 import yaml
 import sys
-
+import re
 
 def yaml_loader(filepath):
     with open(filepath,'r+') as fy:
@@ -11,15 +11,11 @@ def yaml_loader(filepath):
 
 
 filepath = sys.argv[1]
-p = os.getcwd()+'/'+filepath
-head, filename = os.path.split(p)
-#os.chdir(head)
-f1p = p
+p = re.compile('(.*)/(.*.yaml)')
+m = p.match(filepath)
+head = m.group(1)
+fname = m.group(2)
+os.chdir(head)
 print(os.getcwd())
-print(os.listdir("."))
-os.chdir('test case 1')
-#print(os.chdir('..'))
-print(os.getcwd())
-#print(f1p)
-#a1 = yaml_loader(f1p)
-#print(a1)
+a1 = yaml_loader(filepath)
+print(a1)
