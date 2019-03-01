@@ -11,11 +11,7 @@ def yaml_loader(filepath):
 
 
 filepath = sys.argv[1]
-p = re.compile('(.*)/(.*.yaml)')
-m = p.match(filepath)
-head = m.group(1)
-fname = m.group(2)
+head, filename = os.path.split(filepath)
 os.chdir(head)
-print(os.getcwd())
-a1 = yaml_loader(filepath)
+a1 = yaml_loader(filename)
 print(a1)
