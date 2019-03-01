@@ -13,5 +13,5 @@ def yaml_loader(filepath):
 filepath = sys.argv[1]
 head, filename = os.path.split(filepath)
 os.chdir(head)
-a1 = yaml_loader(filename)
+a1 = yaml_loader(filepath)
 print(a1)
