@@ -1,0 +1,13 @@
+items:
+  gun: 10
+  axe:
+    shape: "edge"
+  rocket: ['??',"12"]
+  pistol: "new"
+
+property:
+  House:
+    duplex: 45
+
+list : ["elephant","tiger"]
+li: ["deer","rabbit"]

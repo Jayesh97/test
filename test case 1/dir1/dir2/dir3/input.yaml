@@ -1,0 +1,20 @@
+items:
+  sword: 
+    size: 12
+  axe: 
+    size: 13
+  rocket: ["12","15"]
+  pistol: "old"
+
+property:
+  House:
+    duplex: 12
+    bunglow: 14
+    flat:
+      1-bhk:
+        hall: 2
+        kitchen: 3
+      2-bhk: 5
+      3-bhk: 8
+
+animal list : ["cat","elephant"]
