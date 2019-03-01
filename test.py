@@ -13,7 +13,12 @@ def yaml_loader(filepath):
 filepath = sys.argv[1]
 p = os.getcwd()+'/'+filepath
 head, filename = os.path.split(p)
-sys.path.append(head)
+#os.chdir(head)
 f1p = p
-a1 = yaml_loader(f1p)
+print(os.getcwd())
+print(os.listdir("."))
+print(os.chdir('..'))
+print(os.getcwd())
+#print(f1p)
+#a1 = yaml_loader(f1p)
 print(a1)
