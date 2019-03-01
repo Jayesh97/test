@@ -14,5 +14,6 @@ filepath = sys.argv[1]
 head, filename = os.path.split(filepath)
 print(filepath)
 os.chdir(head)
+print(os.getcwd())
 a1 = yaml_loader(filepath)
 print(a1)
