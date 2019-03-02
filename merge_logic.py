@@ -30,9 +30,6 @@ filepath = os.getcwd()+'/'+sys.argv[1]
 head, filename = os.path.split(filepath)
 os.chdir(head)
 print(os.getcwd())
-a1 = yaml_loader(filepath)
-print(a1)
-
 f1p = filepath
 while(True):
     os.chdir("..")
