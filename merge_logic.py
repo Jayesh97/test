@@ -43,6 +43,6 @@ while(True):
         d = update(a2,a1)
         print("File merged  - located at --------->",f2p)
         yaml_dump(f2p,d)
-        f1p = f2p
+        f1p = fls2p
     else:
         break
