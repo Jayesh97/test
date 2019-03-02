@@ -44,6 +44,5 @@ while(True):
         print("File merged  - located at --------->",f2p)
         yaml_dump(f2p,d)
         f1p = f1p
-        print("h")
     else:
         break
