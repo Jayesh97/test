@@ -1,0 +1,10 @@
+items:
+  gun: 15
+  axe:
+    shape: "edge"
+  rocket: ['??',"12"]
+  pistol: "new"
+
+property:
+  House:
+    duplex: 45
