@@ -24,22 +24,8 @@ def update(d, u):
                 d[k] = v
     return d
 
-filepath = sys.argv[1]
-head, filename = os.path.split(filepath)
-os.chdir(head)
-f1p = filepath
-while(True):
-    os.chdir("..")
-    parent = os.listdir(".")
-    if filename in parent:
-        f2p = os.getcwd()+"/"+filename
-        a1 = yaml_loader(f1p)
-        a2 = yaml_loader(f2p)
-        os.remove(f1p)
-        print("File deleted - located at --------->",f1p)
-        d = update(a2,a1)
-        print("File merged  - located at --------->",f2p)
-        yaml_dump(f2p,d)
-        f1p = f2p
-    else:
-        break
+
+a2 = yaml_loader(sys.argv[2]) ##present in dir3
+a1 = yaml_loader(sys.argv[1]) ##present in dir4
+d = update(a2,a1)
+print(d)
