@@ -3,4 +3,4 @@ python:
   - "2.7"
 install:
   - pip install pyyaml
-script: python test.py 'test case 1/dir1/dir2/dir2/dir4/input.yaml'
+script: python test.py './test_case_1/dir1/dir2/dir2/dir4/input.yaml'
