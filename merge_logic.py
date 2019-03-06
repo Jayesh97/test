@@ -10,7 +10,7 @@ def yaml_loader(filepath):
 
 def yaml_dump(filepath,data):
     with open(filepath,'r+') as fy:
-        yaml.dump(data,fy)
+        yaml.dump(data,fy,default_flow_style=False)
 
 def update(d, u):
     for k, v in u.items():
@@ -25,25 +25,27 @@ def update(d, u):
     return d
 
 
+def merge(a):
+    filepath = os.getcwd()+'/'+a
+    head, filename = os.path.split(filepath)
+    os.chdir(head)
+    f1p = filepath
+    while(True):
+        os.chdir("..")
+        parent = os.listdir(".")
+        if filename in parent:
+            f2p = os.getcwd()+"/"+filename
+            a1 = yaml_loader(f1p)
+            a2 = yaml_loader(f2p)
+            d = update(a2,a1)
+            f1p = f2p
+        else:
+            break
+    yaml_dump(filepath,d)
+    return d
 
-filepath = os.getcwd()+'/'+sys.argv[1]
-head, filename = os.path.split(filepath)
-os.chdir(head)
-print(os.getcwd())
-f1p = filepath
-while(True):
-    os.chdir("..")
-    parent = os.listdir(".")
-    if filename in parent:
-        f2p = os.getcwd()+"/"+filename
-        a1 = yaml_loader(f1p)
-        a2 = yaml_loader(f2p)
-        os.remove(f1p)
-        print("File deleted - located at --------->",f1p)
-        d = update(a2,a1)
-        print("File merged  - located at --------->",f2p)
-        yaml_dump(f2p,d)
-        f1p = f1p
-        print("hi")
-    else:
-        break
+if __name__ == '__main__':
+    y = merge(sys.argv[1])
+    print(y)
+    print yaml.dump(y,default_flow_style=False)
+    

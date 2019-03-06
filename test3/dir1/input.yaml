@@ -1,0 +1,7 @@
+todo:
+  dishes:
+    priority: low
+  laundry:
+    priority: low
+  vacuum:
+    priority: high
