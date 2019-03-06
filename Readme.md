@@ -1,6 +1,6 @@
 # Merging YAML
 
-Required Libraries : Pyyaml, os, collections
+Required Libraries : Pyyaml, os, collection
 
 Steps to Run:
 Step1: After Downloading the repo, check the path to ensure the tree is as such
