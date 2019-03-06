@@ -13,6 +13,5 @@ class Testmerge(unittest.TestCase):
         result = merge_logic.merge('test3/dir1/input.yaml')
         self.assertEqual(result,{'todo': {'laundry': {'priority': 'low'}, 'dishes': {'priority': 'low'}, 'vacuum': {'priority': 'high'}}})
 
-
 if __name__ == '__main__':
     unittest.main()

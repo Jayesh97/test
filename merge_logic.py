@@ -46,6 +46,5 @@ def merge(a):
 
 if __name__ == '__main__':
     y = merge(sys.argv[1])
-    print(y)
     print yaml.dump(y,default_flow_style=False)
     
