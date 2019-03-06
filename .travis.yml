@@ -5,4 +5,3 @@ install:
   - pip install pyyaml
 script: 
   - python merge_logic.py test4/dir1/dir2/dir3/dir4/input.yaml
-  - python test_merge.py
