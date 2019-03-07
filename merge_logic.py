@@ -33,6 +33,7 @@ def update(d, u):
 
 # Merges Yaml Files
 def merge(a):
+    home = os.getcwd()
     filepath = os.getcwd()+'/'+a
     head, filename = os.path.split(filepath)
     os.chdir(head)
@@ -50,9 +51,11 @@ def merge(a):
             break
     #updating the original input file with the modified value
     yaml_dump(filepath,d)
+    os.chdir(home)
     return d
 
 if __name__ == '__main__':
     y = merge(sys.argv[1])
     print yaml.dump(y,default_flow_style=False)
+
     
