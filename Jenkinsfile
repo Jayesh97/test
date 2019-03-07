@@ -16,14 +16,5 @@ pipeline {
                             sh 'python test_merge.py'
                     }
                 }
-                stage('Cleanup'){
-                    steps{
-                        mail body: 'project build successful',
-                        from: 'jayesh5397@gmail.com',
-                        replyTo: 'sjbondu@ncsu.edu',
-                        subject: 'project build successful',
-                        to: 'shbondu@ncsu.edu'
-                    }
-                }
             }     
 }
