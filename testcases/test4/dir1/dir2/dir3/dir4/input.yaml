@@ -7,6 +7,6 @@ items:
 
 property:
   House:
-    duplex: 45.5cl
+    duplex: 45.5
 
 animal list: ["tiger","cat"]

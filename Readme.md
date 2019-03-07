@@ -1,6 +1,6 @@
-# Merging YAML
+# Merging YAML || CI with Travis and Jenkins || Python unittest
 
-Required Libraries : Pyyaml, os, collection
+Required Libraries : Pyyaml, os, collections
 
 Steps to Run:
 Step1: After Downloading the repo, check the path to ensure the tree is as such
@@ -75,3 +75,31 @@ Private GitHub repos can be run in Debug mode to connect to the VM and troublesh
 Using SSH to connect to the VM
 
 ![](/Images/debug_3.PNG)
+
+# CI with Jenkins
+
+Create a Jenkins server
+
+Configure settings ---> GitHub server (Link to the GitHub repo ---> In case of private repo, generate Personal Access Tokens
+
+Create a folder ---> /Folder name/
+  
+New Item ----> Freestyle project ---> SCM, Build trigger(Git Hub hook Trigger), Build - a shell script, Build Parameters(File path)
+
+![](/Images/credentials_git.PNG)
+
+![](/Images/parameter.PNG)
+
+![](/Images/bash_script.PNG)
+
+The build which was triggered by the Git Push through Webhook can be seen as
+
+![](/Images/jenkins_build.PNG)
+
+## Test cases with python - Unittest
+
+Run python test_merge.py
+
+The test cases are kept in the program, which are usually stored in the csv file and read from there
+
+![](/Images/test.PNG)

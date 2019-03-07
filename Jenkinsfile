@@ -11,7 +11,7 @@ pipeline {
                 //This stage takes input yamlfile and merges accordingly
                 stage('Building'){
                     steps{
-                            sh 'python merge_logic.py test4/dir1/dir2/dir3/dir4/input.yaml'
+                            sh 'python merge_logic.py testcases/test4/dir1/dir2/dir3/dir4/input.yaml'
                     }
                 }
                 //This stage performs unittest on the given 3 test cases of the program

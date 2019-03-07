@@ -2,6 +2,9 @@ import os
 import sys
 import collections
 import yaml
+'''
+The program takes path to YAML file and recursively merges them and stores them in the orignal file(ie. child).
+'''
 
 def yaml_loader(filepath):
     with open(filepath,'r+') as fy:
@@ -12,19 +15,23 @@ def yaml_dump(filepath,data):
     with open(filepath,'r+') as fy:
         yaml.dump(data,fy,default_flow_style=False)
 
+#Updates dictionary 
 def update(d, u):
     for k, v in u.items():
         if isinstance(v, collections.Mapping):
+            #Dictinary keys with values as dict() merge iteratively by calling itself
             d[k] = update(d.get(k, {}), v)
         else:
-            if type(v)==list:
+            if type(v)==list: 
+                #Dictinary keys with values as list merge
                 x = set(d[k])- set(v)
                 d[k] = v+list(x)
             else:
+                #Dictinary keys with values as str,float,int merge
                 d[k] = v
     return d
 
-
+# Merges Yaml Files
 def merge(a):
     filepath = os.getcwd()+'/'+a
     head, filename = os.path.split(filepath)
@@ -41,6 +48,7 @@ def merge(a):
             f1p = f2p
         else:
             break
+    #updating the original input file with the modified value
     yaml_dump(filepath,d)
     return d
 
