@@ -1,7 +1,5 @@
 pipeline {
     agent any 
-        currentBuild.result = 'SUCCESS'
-        try{
             stages{
                 stage('checkout'){
                     steps{
@@ -28,16 +26,4 @@ pipeline {
                     }
                 }
             }     
-        }
-        catch(err) {
-                currenBuild.result = 'FAILURE'
-
-                    mail body: 'project build Failed',
-                    from: 'jayesh5397@gmail.com',
-                    replyTo: 'sjbondu@ncsu.edu',
-                    subject: 'project build Failed',
-                    to: 'shbondu@ncsu.edu'
-                
-                throw err
-            }
 }
