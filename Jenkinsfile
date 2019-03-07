@@ -3,17 +3,17 @@ pipeline {
         stages{
             stage('checkout'){
                 steps{
-                        sh 'echo "checkout stage"'
+                        sh 'pip install pyyaml'
                 }
              }
             stage('Building'){
                 steps{
-                        sh 'echo "Build stage"'
+                        sh 'python merge_logic.py test4/dir1/dir2/dir3/dir4/input.yaml'
                 }
              }
             stage('Testing'){
                 steps{
-                        sh 'echo "Testing stage1"'
+                        sh 'python test_merge.py'
                 }
             }
         }
