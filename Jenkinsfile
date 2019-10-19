@@ -5,7 +5,7 @@ pipeline {
                 //Installing dependencies
                 stage('checkout'){
                     steps{
-                            sh 'pip install pyyaml'
+                            sh 'pipp install pyyaml'
                     }
                 }
                 //This stage takes input yamlfile and merges accordingly
