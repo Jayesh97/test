@@ -3,7 +3,7 @@ import merge_logic
 
 class Testmerge(unittest.TestCase):
 
-    #Best_practice - Test cases can be read from a CSV file
+    #Best_practice - Test cases can be read from a CSV file   
     def test_merge(self):
         result = merge_logic.merge('testcases/test1/dir1/input.yaml')
         self.assertEqual(result,{'color': 'blue', 'count': 2, 'size': 9})
