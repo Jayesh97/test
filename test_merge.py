@@ -7,10 +7,14 @@ class Testmerge(unittest.TestCase):
     def test_merge(self):
         result = merge_logic.merge('testcases/test1/dir1/input.yaml')
         self.assertEqual(result,{'color': 'blue', 'count': 2, 'size': 9})
+        
+    def test_merge2(self):
 
         result = merge_logic.merge('testcases/test2/dir1/input.yaml')
         self.assertEqual(result,{'wishlist': ['worldpeace', 'car', 'pony1']})
 
+    def test_merge3(self):
+        
         result = merge_logic.merge('testcases/test3/dir1/input.yaml')
         self.assertEqual(result,{'todo': {'laundry': {'priority': 'low'}, 'dishes': {'priority': 'low'}, 'vacuum': {'priority': 'high'}}})
 
